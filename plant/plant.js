@@ -30,11 +30,24 @@ const blueFood = changeState("soil")(5);
 const hydrate = changeState("water")(1);
 const superWater = changeState("water")(5);
 
+const giveLight = changeState("light")(1);
+const superLight = changeState("light")(5);
+
 $(document).ready(function() {
 
 // This function has side effects because we are using jQuery. Manipulating the DOM will always be a side effect. Note that we only use one of our functions to alter soil. You can easily add more.
 
   $('#feed').click(function() {
+    const newState = stateControl(blueFood);
+    $('#soil-value').text(`Soil: ${newState.soil}`);
+  });
+
+  $('#hydrate').click(function() {
+    const newState = stateControl(blueFood);
+    $('#soil-value').text(`Soil: ${newState.soil}`);
+  });
+
+  $('#giveLight').click(function() {
     const newState = stateControl(blueFood);
     $('#soil-value').text(`Soil: ${newState.soil}`);
   });
